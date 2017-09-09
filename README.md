@@ -1,6 +1,11 @@
 # QuickBot
 QuickBot is a simple TweetsTool.com abuse bot written by me
 
+# INSTRUCTIONS
+QuickBot is a very simple bot that abuses TweetsTool's systems to provide likes, retweets and comments WITHOUT you logging in.
+
+However we must EXPLAIN a few things. There are a couple requirements! You MUST use HOTSPOT SHIELD VPN for this to work! You MUST run this from LOCALHOST we recommend XAMPP! If you do not use HOTSPOT SHIELD VPN this will not work! If you do not use LOCALHOST this will not work!
+
 # LICENSE
                     GNU AFFERO GENERAL PUBLIC LICENSE
                        Version 3, 19 November 2007
