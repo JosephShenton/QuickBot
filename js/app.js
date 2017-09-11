@@ -102,3 +102,29 @@ function order_comments(url1, message, repeats, tweeter) {
     }, 1500);
   }, 2500);
 }
+
+
+function order_followers(username, repeats) {
+  $("#order_followers").text('Ordering');
+  $("#order_followers").addClass('disabled');
+  $("#order_followers").attr('disabled', 'disabled');
+  setTimeout(function() {
+    $("#order_followers").text('Ordered');
+    setTimeout(function() {
+      $("#order_followers").text('Sending');
+      $.post('API/followers.php', {username: username, repeats: repeats}, function (data) {
+        console.log(data);
+        $("#order_followers").text('Delivered');
+        $("#order_followers").addClass('disabled');
+        $("#order_followers").attr('disabled', 'disabled');
+        setTimeout(function() {
+          $("#order_followers").text('Order');
+          $("#order_followers").removeClass('disabled');
+          $("#order_followers").removeAttr('disabled');
+          $("#followers_username").val("");
+          $("#followers_repeats").val("");
+        }, 1500);
+      });
+    }, 1500);
+  }, 2500);
+}

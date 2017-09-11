@@ -19,4 +19,8 @@ var routes = [
     path: '/comments/',
     url: './pages/comments.html',
   },
+  {
+    path: '/followers/',
+    url: './pages/followers.html',
+  },
 ];

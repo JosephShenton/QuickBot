@@ -13,7 +13,7 @@
           <span class="ios-only">QuickBot</span>
         </a>
       </div>
-      <div class="title">Likes</div>
+      <div class="title">Followers</div>
     </div>
   </div>
   <div class="page-content">
@@ -24,11 +24,11 @@
       <ul>
         <li class="item-content item-input item-input-with-info">
           <div class="item-inner">
-            <div class="item-title item-label">Tweet URL</div>
+            <div class="item-title item-label">Username</div>
             <div class="item-input-wrap">
-              <input type="url" id="likes_url" placeholder="Tweet URL" required validate>
+              <input type="text" id="followers_username" placeholder="Username" required validate>
               <span class="input-clear-button"></span>
-              <div class="item-input-info">EG: https://twitter.com/JosephShenton/status/903900955</div>
+              <div class="item-input-info">EG: @JohnDoe</div>
             </div>
           </div>
         </li>
@@ -36,7 +36,7 @@
           <div class="item-inner">
             <div class="item-title item-label">Repeats</div>
             <div class="item-input-wrap">
-              <input type="number" id="likes_repeats" placeholder="Repeats" required validate>
+              <input type="number" id="followers_repeats" placeholder="Repeats" required validate>
               <span class="input-clear-button"></span>
               <div class="item-input-info">EG: 100</div>
             </div>
@@ -44,6 +44,6 @@
         </li>
       </ul>
     </div>
-    <button class="button button-big button-fill" onclick="order_likes($('#likes_url').val(), $('#likes_repeats').val())" id="order_likes" style="width: 95%; margin-left: auto; margin-right: auto;">Order Likes</button>
+    <button class="button button-big button-fill" onclick="order_followers($('#followers_username').val(), $('#followers_repeats').val())" id="order_followers" style="width: 95%; margin-left: auto; margin-right: auto;">Order Followers</button>
   </div>
 </div>

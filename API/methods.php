@@ -98,5 +98,34 @@
         curl_close($ch);
     }
 
+    function followers($username) {
+        $url = 'http://tweetstool.com/follower.php?type=custom';
+        
+        $fields = array(
+                                'limit' => urlencode("20"),
+                                'username' => urlencode($username)
+                        );
+
+        //url-ify the data for the POST
+        $fields_string = '';
+        foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+        rtrim($fields_string, '&');
+
+        //open connection
+        $ch = curl_init();
+
+        //set the url, number of POST vars, POST data
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch,CURLOPT_HTTPHEADER, array('Origin: http://tweetstool.com', 'Upgrade-Insecure-Requests: 1', 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36', 'Content-Type: application/x-www-form-urlencoded', 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Referer: http://tweetstool.com/follower.php?type=custom', 'Accept-Encoding: gzip, deflate', 'Accept-Language: en-US,en;q=0.8,la;q=0.6', 'Cookie: __cfduid=d32213a232d05639b37010b16fb06c60a1493850246; tw_message=danger%7C%7C%7C%7C%7Cgenerate; oauth_data=N3x3owAAAAAACdmWAAABXCR56u8%28%5E_%5E%29rdFZmNpnJoQFe6zEpvpgnJjHRQxop3pP; arp_scroll_position=275; tw_user=858899166927376384; tw_s_name=TestBotter1; tw_name=TestBotter; pl_token=858899166927376384-x7bFjS6fYeJKIuqcXFa6jr8tgNwXUr1; pl_token_secret=1PtCss6nfX2V2nMcjkJ0PTOtySxQ5suIIrMyAaCuDBZeW; _ga=GA1.2.246180771.1494059476; _gid=GA1.2.675511454.1495260828', 'AlexaToolbar-ALX_NS_PH: AlexaToolbar/alx-4.0.1'));
+        curl_setopt($ch,CURLOPT_POST, count($fields));
+        curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+        curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+        //execute post
+        curl_exec($ch);
+
+        //close connection
+        curl_close($ch);
+    }
+
 
 ?>
